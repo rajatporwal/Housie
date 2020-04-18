@@ -8,6 +8,7 @@ const generateTicket = () => {
 const onClickHandler = setNumbers => {
   setNumbers(generateTicket);
 };
+
 const Ticket = () => {
   const [numbers, setNumbers] = useState(tambola.getTickets(1).flat(Infinity));
   return (

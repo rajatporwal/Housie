@@ -1,10 +1,10 @@
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
     <footer className="footer">
-      <ul className="nav">
+      {/* <ul className="nav">
         <li className="nav__item">
           <Link to="/faq" className="nav__link">
             About
@@ -30,7 +30,7 @@ const Footer = () => {
             Suggestion or Feedback
           </Link>
         </li>
-      </ul>
+      </ul> */}
       <p className="copyright">
         &copy; Copyright 2020 by Rajat Porwal. All rights reserved. &nbsp; |
         &nbsp; Terms of Service &nbsp; | &nbsp; Privacy Policy

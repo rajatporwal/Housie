@@ -30,7 +30,7 @@
     }
     
     &__icon {
-      fill: $color-icon;
+      fill: #004e92;
       width: 3rem;
       height: 3rem;
       margin-left: auto;
@@ -42,15 +42,19 @@
 .grid-container {
   display: grid;
   grid-template-columns: repeat(9, 1fr);
-  background-color: $color-icon;
-  padding: 10px;
+  background-color: #004e92;
+  padding: 1rem;
+
+  @media only screen and (max-width: $bp-medium) {
+    padding:.5rem;
+  }
 }
 
 .grid-item {
  font-family: $font-display;
   font-size: 1.6rem;
   background-color: #fff8dc;
-  border: .1px solid rgba(0, 0, 0, 0.8);
-  padding: 20px;
+  border: .1px solid rgba(0, 0, 0, 0.774);
+  padding: 2rem;
   text-align: center;
 }
