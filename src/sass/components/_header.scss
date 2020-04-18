@@ -1,0 +1,19 @@
+.header {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  
+  padding: 2rem;
+  font-size: 3.5rem;
+  font-style: italic;
+  text-transform: uppercase;
+  font-weight: 700;
+  background-image: linear-gradient(to right, $color-title-dark, $color-title-light);
+  -webkit-background-clip: text;
+  background-clip: text;
+  transition: all .2s;
+  border-radius: 3px;
+  box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
+  color: transparent;
+  letter-spacing: .2rem;
+}

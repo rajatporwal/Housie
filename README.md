@@ -1,2 +1,0 @@
-# Housie
-Created with CodeSandbox
