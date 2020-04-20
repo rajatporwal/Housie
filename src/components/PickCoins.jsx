@@ -13,7 +13,7 @@ const onClickHandler = (
     setNumber(array[index]);
     setIndex(index + 1);
     setDashboard(initialDashboard(index + 1, array));
-  } else if (index !== 0) {
+  } else {
     setNumber(array[index - 1]);
     setIndex(index - 1);
     setDashboard(initialDashboard(index - 1, array));
@@ -55,16 +55,36 @@ const PickCoins = () => {
         <div className="coins--btn">
           <button
             className="btn"
-            onClick={() =>
-              onClickHandler(arr, index, setNumber, setIndex, setDashboard, 0)
+            onClick={
+              index === 0
+                ? null
+                : () =>
+                    onClickHandler(
+                      arr,
+                      index,
+                      setNumber,
+                      setIndex,
+                      setDashboard,
+                      0
+                    )
             }
           >
             Prev
           </button>
           <button
             className="btn"
-            onClick={() =>
-              onClickHandler(arr, index, setNumber, setIndex, setDashboard, 1)
+            onClick={
+              index === 90
+                ? null
+                : () =>
+                    onClickHandler(
+                      arr,
+                      index,
+                      setNumber,
+                      setIndex,
+                      setDashboard,
+                      1
+                    )
             }
           >
             {index === 0 ? "Start" : "Next"}

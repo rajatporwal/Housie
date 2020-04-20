@@ -1,7 +1,6 @@
 .home {
   display: grid;  
   grid-template-columns: 10% [center-start] 1fr [center-end] 10%;
-  min-height: 80vh;
 }
 
 .home-wrapper {
