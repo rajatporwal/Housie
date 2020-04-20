@@ -16,14 +16,32 @@
     display: grid;
     grid-column: 1 / -1;
   }
+}
 
-  &--icons {
-    fill: #004e92;
-    width: 3rem;
-    height: 2rem;
-    margin-left: 4rem;
-    cursor: pointer;
-    transform: translateY(.2rem);
+.home-button {
+  background: #2979ff;
+  padding: 2rem;
+  border-radius: 4rem;
+    
+    &--link {
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 1.7rem;
+      cursor: pointer;
+    }
+
+    &--icons {
+      fill: #fff;
+      width: 3rem;
+      height: 2rem;
+      margin-left: 3rem;
+      cursor: pointer;
+      transform: translateY(.2rem);
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-black,.2);
   }
-  
 }

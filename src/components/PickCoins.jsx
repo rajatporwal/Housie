@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import tambola from "tambola-generator";
+import { Beforeunload } from "react-beforeunload";
 
 const onClickHandler = (
   array,
@@ -47,51 +48,53 @@ const PickCoins = () => {
   }, []);
 
   return (
-    <div className="pick">
-      {dashborad}
-      <div className="coins">
-        <h1 className="coins--text__sub">{`Total Coins: ${index}`}</h1>
-        <h1 className="coins--text">{number}</h1>
-        <div className="coins--btn">
-          <button
-            className="btn"
-            onClick={
-              index === 0
-                ? null
-                : () =>
-                    onClickHandler(
-                      arr,
-                      index,
-                      setNumber,
-                      setIndex,
-                      setDashboard,
-                      0
-                    )
-            }
-          >
-            Prev
-          </button>
-          <button
-            className="btn"
-            onClick={
-              index === 90
-                ? null
-                : () =>
-                    onClickHandler(
-                      arr,
-                      index,
-                      setNumber,
-                      setIndex,
-                      setDashboard,
-                      1
-                    )
-            }
-          >
-            {index === 0 ? "Start" : "Next"}
-          </button>
+    <Beforeunload onBeforeunload={() => "You'll lose your data!"}>
+      <div className="pick">
+        {dashborad}
+        <div className="coins">
+          <h1 className="coins--text__sub">{`Total Coins: ${index}`}</h1>
+          <h1 className="coins--text">{number}</h1>
+          <div className="coins--btn">
+            <button
+              className="btn"
+              onClick={
+                index === 0
+                  ? null
+                  : () =>
+                      onClickHandler(
+                        arr,
+                        index,
+                        setNumber,
+                        setIndex,
+                        setDashboard,
+                        0
+                      )
+              }
+            >
+              Prev
+            </button>
+            <button
+              className="btn"
+              onClick={
+                index === 90
+                  ? null
+                  : () =>
+                      onClickHandler(
+                        arr,
+                        index,
+                        setNumber,
+                        setIndex,
+                        setDashboard,
+                        1
+                      )
+              }
+            >
+              {index === 0 ? "Start" : "Next"}
+            </button>
+          </div>
         </div>
       </div>
-    </div>
+    </Beforeunload>
   );
 };
 
