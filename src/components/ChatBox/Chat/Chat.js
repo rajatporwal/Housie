@@ -15,6 +15,7 @@ const Chat = ({ name, room }) => {
   const [message, setMessage] = useState("");
   const [messages, setMessages] = useState([]);
   const ENDPOINT = "https://housie-server.herokuapp.com/";
+  // const ENDPOINT = "https://vr7qq.sse.codesandbox.io/";
 
   useEffect(() => {
     socket = io(ENDPOINT);
