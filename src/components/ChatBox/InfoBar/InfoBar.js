@@ -8,7 +8,7 @@ const InfoBar = ({ room }) => (
       <svg class="onlineIcon">
         <use xlinkHref="img/sprite.svg#icon-dot-single" />
       </svg>
-      <h3>{room}</h3>
+      <h2>{room}</h2>
     </div>
     <div className="rightInnerContainer">
       <a href="/">
