@@ -1,7 +1,18 @@
-.wrapper {
+.ticket-wrapper {
   display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 2rem;
   align-items: center;
   justify-content: center;
+
+  & > * {
+    margin: 2rem;
+  }
+
+  @media only screen and (max-width: $bp-medium) {
+    grid-template-columns: 1fr;
+    margin: 2rem;
+  }
 }
 
 .ticket {
@@ -33,7 +44,6 @@
       fill: #004e92;
       width: 3rem;
       height: 3rem;
-      margin-left: auto;
       cursor: pointer;
     }
   }

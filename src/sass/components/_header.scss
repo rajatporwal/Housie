@@ -1,25 +1,36 @@
 .header {
   display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
   align-items: center;
-  justify-content: center;
-  
-  padding: 2rem;
-  font-family: $font-display;
-  font-size: 3.5rem;
-  font-style: italic;
-  text-transform: uppercase;
-  font-weight: 700;
-
   background-image: linear-gradient(to right, #000428, #004e92);
-  color: #fff;
-
-  // background-image: linear-gradient(to right, $color-title-dark, $color-title-light);
-  // -webkit-background-clip: text;
-  // background-clip: text;
   transition: all .2s;
   border-radius: 3px;
   box-shadow: 0 1.5rem 4rem rgba($color-black, .15);
   letter-spacing: .2rem;
+   // background-image: linear-gradient(to right, $color-title-dark, $color-title-light);
+  // -webkit-background-clip: text;
+  // background-clip: text;
+
+  &--title {
+    display: grid;
+    grid-column: 2 / 3;
+    justify-content: center;
+    padding: 2rem;
+    font-family: $font-display;
+    text-decoration: none;
+    font-size: 3.5rem;
+    font-style: italic;
+    text-transform: uppercase;
+    font-weight: 700;
+    color: #fff;
+  }
+
+  &--logout {
+    padding: 1rem;
+    width: min-content;
+    margin-left: auto;
+    margin-right: 2rem;
+  }
 
   @media only screen and (max-width: $bp-largest) {
         margin-bottom: 10rem;

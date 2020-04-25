@@ -1,7 +1,6 @@
 .home {
   display: grid;  
   grid-template-columns: 10% [center-start] 1fr [center-end] 10%;
-  min-height: 80vh;
 }
 
 .home-wrapper {
@@ -17,14 +16,34 @@
     display: grid;
     grid-column: 1 / -1;
   }
+}
 
-  &--icons {
-    fill: #004e92;
-    width: 3rem;
-    height: 2rem;
-    margin-left: 4rem;
-    cursor: pointer;
-    transform: translateY(.2rem);
+.home-button {
+  // background: #2979ff;
+  background-image: linear-gradient(to right, #000428, #004e92);
+  padding: 2rem;
+  border-radius: 4rem;
+  border: none;
+    
+    &--link {
+      color: #fff;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-size: 1.7rem;
+      cursor: pointer;
+    }
+
+    &--icons {
+      fill: #fff;
+      width: 3rem;
+      height: 2rem;
+      margin-left: 3rem;
+      cursor: pointer;
+      transform: translateY(.2rem);
+    }
+
+    &:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 1rem 2rem rgba($color-black,.2);
   }
-  
 }

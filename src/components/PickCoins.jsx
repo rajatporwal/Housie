@@ -1,5 +1,8 @@
 import React, { useState, useEffect } from "react";
+import { useSelector } from "react-redux";
 import tambola from "tambola-generator";
+import { Beforeunload } from "react-beforeunload";
+import Chat from "./ChatBox/Chat/Chat";
 
 const onClickHandler = (
   array,
@@ -13,7 +16,7 @@ const onClickHandler = (
     setNumber(array[index]);
     setIndex(index + 1);
     setDashboard(initialDashboard(index + 1, array));
-  } else if (index !== 0) {
+  } else {
     setNumber(array[index - 1]);
     setIndex(index - 1);
     setDashboard(initialDashboard(index - 1, array));
@@ -41,37 +44,64 @@ const PickCoins = () => {
   const [number, setNumber] = useState([]);
   const [index, setIndex] = useState(0);
   const [dashborad, setDashboard] = useState(initialDashboard(0, []));
+  const name = useSelector(state => state.rootReducer.user.name);
+  const room = useSelector(state => state.rootReducer.user.room);
 
   useEffect(() => {
     setArr(tambola.getDrawSequence());
   }, []);
 
   return (
-    <div className="pick">
-      {dashborad}
-      <div className="coins">
-        <h1 className="coins--text__sub">{`Total Coins: ${index}`}</h1>
-        <h1 className="coins--text">{number}</h1>
-        <div className="coins--btn">
-          <button
-            className="btn"
-            onClick={() =>
-              onClickHandler(arr, index, setNumber, setIndex, setDashboard, 0)
-            }
-          >
-            Prev
-          </button>
-          <button
-            className="btn"
-            onClick={() =>
-              onClickHandler(arr, index, setNumber, setIndex, setDashboard, 1)
-            }
-          >
-            {index === 0 ? "Start" : "Next"}
-          </button>
+    <Beforeunload onBeforeunload={() => "You'll lose your data!"}>
+      <div className="pick">
+        {dashborad}
+        <div className="coins">
+          <h1 className="coins--text__sub">{`Total Coins: ${index}`}</h1>
+          <h1 className="coins--text">{number}</h1>
+          <div className="coins--btn">
+            <button
+              className="btn"
+              onClick={
+                index === 0
+                  ? null
+                  : () =>
+                      onClickHandler(
+                        arr,
+                        index,
+                        setNumber,
+                        setIndex,
+                        setDashboard,
+                        0
+                      )
+              }
+            >
+              Prev
+            </button>
+            <button
+              className="btn"
+              onClick={
+                index === 90
+                  ? null
+                  : () =>
+                      onClickHandler(
+                        arr,
+                        index,
+                        setNumber,
+                        setIndex,
+                        setDashboard,
+                        1
+                      )
+              }
+            >
+              {index === 0 ? "Start" : "Next"}
+            </button>
+          </div>
+        </div>
+        <div className="m-2">
+          <Chat name={name} room={room} />
         </div>
       </div>
-    </div>
+    </Beforeunload>
   );
 };
 
